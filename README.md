@@ -1,7 +1,8 @@
 (IODs)Introduction of Doggies App
 ==================================
 
-The Woof app is a list of dog photos with information about them including their name, age, and favorite activity. This app also uses Material Design to create a beautiful app experience for the user.
+このアプリはわんちゃんたちのプロフィールを観賞するアプリである。入力できるプロフィール情報は「名前」「年齢」「趣味」「フリーコメント」となっている。
+データ永続化のため、Roomを使用してます。また、将来的には画像をアップロードできるような実相を想定している。
 
 Introduction
 ------------
