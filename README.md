@@ -15,12 +15,16 @@ You can register the following information:
 
 機能 (Features)
 -------------
-- 犬のプロフィール登録・保存・削除
+- ログイン/ログオン (ユーザごとのIDとパスワードは未実装)
+- 犬のプロフィール登録・保存・編集・参照・削除
+- アプリ起動時にサンプル犬データを読み込み (createFromAssets を使用)
 - Jetpack Compose と Material3 を用いた UI
 - Roomによるデータ永続化
 
 --------
-- Register and save dog profiles
+- Login / Logon (DB for user-specific ID and password is not implemented)
+- Register, save, edit, view, and delete dog profiles
+- Load sample dog profiles on app startup using createFromAssets
 - UI built with Jetpack Compose and Material3
 - Data persistence with Room
 
