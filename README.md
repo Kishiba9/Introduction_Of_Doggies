@@ -1,30 +1,71 @@
-(IODs)Introduction of Doggies App
+(IODs)Introduction of Doggies App 犬のプロフィールを登録・閲覧できるシンプルなアプリ
 ==================================
 
-このアプリはわんちゃんたちのプロフィールを観賞するアプリである。入力できるプロフィール情報は「名前」「年齢」「趣味」「フリーコメント」となっている。
-データ永続化のため、Roomを使用している。また、将来的には画像をアップロードできるような実相を想定している。
-
-Introduction
+概要 (Overview)
 ------------
+Introduction of Doggies (IODs) は、わんちゃんたちのプロフィールを観賞できるアプリです。
+This is an app where you can view profiles of dogs.
 
-This is the solution code for the Woof app project. This project is an opportunity for you to learn Material3 and reinforce the concepts you've learned so far in Android Basics with Compose.
+プロフィールには以下の情報を登録できます:
+You can register the following information:
+- 名前(Name)
+- 年齢(Age)
+- 趣味(Hobby)
+- フリーコメント(Free comment)
 
-Pre-requisites
+機能 (Features)
+-------------
+- 犬のプロフィール登録・保存
+- Jetpack Compose と Material3 を用いた UI
+- Roomによるデータ永続化
+
+--------
+- Register and save dog profiles
+- UI built with Jetpack Compose and Material3
+- Data persistence with Room
+
+使用技術 (Tech Stack)
 --------------
+- Kotlin
+- Jetpack Compose
+- Material3
+- State / Flow / StateFlow による UI 状態管理
+- Coroutine (非同期処理)
+- MVVM アーキテクチャによる UI とデータの分離
+- Room (データ永続化)
+- Jetpack Navigation (NavController / NavHost による画面遷移)
 
-- Rows/Columns
-- Modifiers
-- Scaffold
-- Adding images
-- Button click handlers
-- Functions
+学習要素 (Key Concepts)
+--------------
+- State / StateFlow での状態管理
+- Card / LazyColumn の使用
+- Composable Functions
 - Classes
 - Lists
-- App architecture
+- Rows/Columns
+- Modifiers
+- Button click handlers
 
-Getting Started
+セットアップ (Getting Started)
 ---------------
+1. リポジトリをクローンしてください。  
+   Clone this repository.
+2. Android Studio で開きます。  
+   Open the project in Android Studio.
+3. エミュレータまたは実機で実行します。  
+   Run on an emulator or physical device.
 
-1. Download the project
-2. Open the project in Android Studio
-3. Run the project
+今後の展望 (Future Work)
+---------------
+- プロフィール画像のアップロード機能
+- UI デザインの改善
+- API連携の実装テスト
+- Firebaseとの連携
+- 検索・ソート機能の追加
+
+--------
+- Add profile image upload feature
+- Improve UI design
+- Test implementation of API integration
+- Integration with Firebase
+- Add search and sort functionality  
