@@ -1,5 +1,9 @@
 package com.example.iods.ui.home
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,10 +20,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Expand
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -27,6 +35,9 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -145,6 +156,12 @@ private fun DoggyList(
                 modifier = Modifier
                     .padding(dimensionResource(id = R.dimen.padding_small))
                     .clickable { onDogClick(dog) }
+                    .animateContentSize(
+                        animationSpec = spring(
+                            dampingRatio = Spring.DampingRatioLowBouncy,
+                            stiffness = Spring.StiffnessLow
+                        )
+                    )
             )
         }
     }
@@ -158,21 +175,78 @@ private fun DoggyItem(
     Card(
         modifier = modifier, elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
+        var expanded by rememberSaveable { mutableStateOf(false) }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(dimensionResource(R.dimen.padding_small))
+    ){
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(dimensionResource(id = R.dimen.padding_medium))
+            verticalAlignment = Alignment.CenterVertically
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(dimensionResource(id = R.dimen.padding_medium))
         ) {
             Text(
                 text = dog.name,
                 style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(start = dimensionResource(R.dimen.padding_medium))
             )
             Spacer(Modifier.weight(1f))
-            Text(
-                text = dog.hobby,
-                style = MaterialTheme.typography.titleMedium
+
+            DoggyIconButton(
+                expanded = expanded,
+                onClickButton = {expanded = !expanded}
+            )
+            }
+        }
+
+        if(expanded) {
+            DoggyHobby(
+                dog = dog,
+                modifier = Modifier.padding(
+                    start = dimensionResource(R.dimen.padding_large),
+                    end = dimensionResource(R.dimen.padding_medium),
+                    top = dimensionResource(R.dimen.padding_small),
+                    bottom = dimensionResource(R.dimen.padding_medium)
+                )
             )
         }
+    }
+}
+
+@Composable
+fun DoggyHobby(
+    dog: Dog,
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+        Text(
+            text = stringResource(R.string.about),
+            style = MaterialTheme.typography.bodyLarge
+        )
+        Text(
+            text = dog.hobby,
+            style = MaterialTheme.typography.titleMedium
+        )
+    }
+}
+
+@Composable
+fun DoggyIconButton(
+    expanded: Boolean,
+    onClickButton: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    IconButton(
+        onClick = onClickButton,
+        modifier = modifier
+    ) {
+        Icon(
+            imageVector = if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+            contentDescription = stringResource(R.string.expand_button_content_description),
+            tint = MaterialTheme.colorScheme.secondary
+        )
     }
 }
 
