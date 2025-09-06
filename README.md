@@ -1,4 +1,5 @@
-(IODs)Introduction of Doggies App 犬のプロフィールを登録・閲覧できるシンプルなアプリ
+(IODs)Introduction of Doggies App 
+犬のプロフィールを登録・閲覧できるシンプルなアプリ
 ==================================
 
 概要 (Overview)
