@@ -3,10 +3,10 @@
 
 概要 (Overview)
 ------------
-Introduction of Doggies (IODs) は、わんちゃんたちのプロフィールを観賞できるアプリです。
+Introduction of Doggies (IODs) は、わんちゃんたちのプロフィールを観賞できるアプリです。<br>
 This is an app where you can view profiles of dogs.
 
-プロフィールには以下の情報を登録できます:
+プロフィールには以下の情報を登録できます: <br>
 You can register the following information:
 - 名前(Name)
 - 年齢(Age)
