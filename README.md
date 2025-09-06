@@ -1,5 +1,4 @@
-(IODs)Introduction of Doggies App 
-犬のプロフィールを登録・閲覧できるシンプルなアプリ
+(IODs)Introduction of Doggies App <br> 犬のプロフィールを登録・閲覧できるシンプルなアプリ
 ==================================
 
 概要 (Overview)
@@ -16,7 +15,7 @@ You can register the following information:
 
 機能 (Features)
 -------------
-- 犬のプロフィール登録・保存
+- 犬のプロフィール登録・保存・削除
 - Jetpack Compose と Material3 を用いた UI
 - Roomによるデータ永続化
 
