@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Woof</string>
+    <string name="app_name">Doggy</string>
     <string name="dog_name_1">Koda</string>
     <string name="dog_name_2">Lola</string>
     <string name="dog_name_3">Frankie</string>

@@ -15,5 +15,5 @@
   ~ limitations under the License.
   -->
 <resources>
-    <style name="Theme.Woof" parent="android:Theme.Material.Light.NoActionBar"/>
+    <style name="Theme.IODs" parent="android:Theme.Material.Light.NoActionBar"/>
 </resources>
